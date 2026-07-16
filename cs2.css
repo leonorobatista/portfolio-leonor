@@ -357,7 +357,7 @@ body {
         align-items: flex-end !important; 
     }
     .paper-home {
-        background-size: 280% auto !important;
+        background-size: 160% auto !important;
         background-position: right center !important; 
     }
 }
