@@ -176,7 +176,7 @@ body {
 .project-media video { width: 100%; height: auto; display: block; }
 
 /* =======================================================
-   7. SECÇÃO SOBRE E PAPEIS (Estilo Papel de Fundo)
+   7. SECÇÃO SOBRE E PAPEIS
    ======================================================= */
 .project-description-wrapper { 
     width: 100%; 
@@ -193,7 +193,12 @@ body {
     z-index: 5; 
 }
 
-/* BACKGROUNDS DOS PAPEIS (A imagem original sem distorções) */
+/* Força a ocultação total de qualquer texto remanescente do HTML antigo */
+.side-tear-frame p {
+    display: none !important;
+}
+
+/* BACKGROUNDS DOS PAPEIS */
 .paper-home { 
     background: url('images/finalrasgado.png') no-repeat right bottom; 
     background-size: cover; 
