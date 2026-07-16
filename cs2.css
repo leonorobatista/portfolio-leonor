@@ -221,8 +221,8 @@ body {
 }
 
 .side-tear-frame {
-    position: fixed !important; /* garante que toca as margens do viewport */
-    left: 0 !important;
+    position: absolute !important; /* dentro da secção about */
+    left: calc(50% - 50vw) !important; /* full-bleed nas margens da secção */
     width: 100vw !important; /* ocupa toda a largura do viewport */
     bottom: 0 !important;
     height: clamp(140px, 18vh, 260px) !important;
@@ -265,7 +265,7 @@ body {
     gap: clamp(30px, 4vw, 70px);
     margin-top: 0 !important; 
     position: relative; 
-    overflow: visible;
+    overflow: hidden; /* clip tear to section */
     scroll-snap-align: start; /* Fixa o About no fundo */
     scroll-snap-stop: always;
 }
