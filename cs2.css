@@ -225,11 +225,11 @@ body {
     left: 0 !important;
     right: 0 !important;
     bottom: 0 !important;
-    width: 100% !important;
-    height: clamp(180px, 24vh, 320px) !important;
+    height: clamp(140px, 18vh, 260px) !important;
     display: block !important;
     z-index: 5 !important;
     overflow: hidden !important;
+    pointer-events: none !important;
 }
 
 /* Ocultação de texto */
@@ -240,8 +240,9 @@ body {
 /* BACKGROUNDS DOS PAPEIS */
 .paper-home { 
     background: url('images/finalrasgado.png?v=4') no-repeat center bottom !important; 
-    background-size: cover !important; 
+    background-size: 100% auto !important; 
     background-position: center bottom !important;
+    background-repeat: no-repeat !important;
     width: 100% !important;
     height: 100% !important;
 }
@@ -253,14 +254,16 @@ body {
 /* AJUSTES DA PÁGINA SOBRE */
 .about { 
     width: 100%; 
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: clamp(80px, 15vw, 150px) 6% 0; /* top + side padding to match projects */
     height: 100vh; 
     min-height: 100vh; 
     display: flex; 
     align-items: flex-end !important; 
-    justify-content: space-between; 
+    justify-content: flex-start; /* alinhado ao início do conteúdo */
     gap: clamp(30px, 4vw, 70px);
     margin-top: 0 !important; 
-    padding-top: clamp(80px, 15vw, 150px);
     position: relative; 
     overflow: visible;
     scroll-snap-align: start; /* Fixa o About no fundo */
@@ -275,11 +278,12 @@ body {
     flex-shrink: 0 !important; 
     width: clamp(220px, 24%, 280px) !important;
     max-width: 280px !important;
+    margin-left: 0 !important;
 }
 .bio-pill-floating { 
     position: absolute; 
     top: clamp(-80px, -10vw, -130px); 
-    left: 10%; 
+    left: 0; 
     width: clamp(100px, 15vw, 200px); 
     transform: rotate(-10deg); 
     transition: transform 0.3s ease; 
