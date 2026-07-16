@@ -283,7 +283,7 @@ body {
 }
 .bio-pill-floating { 
     position: absolute; 
-    top: clamp(-1260px, -108vw, -1560px); /* 3x higher */
+    top: -80px; /* bastante mais para baixo */
     left: 0; 
     width: clamp(100px, 15vw, 200px); 
     transform: rotate(-10deg); 
@@ -341,7 +341,7 @@ body {
         bottom: auto !important;
     }
     .bio-pill-floating {
-        top: -50px;
+        top: -80px; /* matches desktop */
         left: 5%;
     }
     
