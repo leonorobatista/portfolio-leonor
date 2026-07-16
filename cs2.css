@@ -222,13 +222,11 @@ body {
 
 .side-tear-frame { 
     position: absolute !important;
-    top: 5% !important;
-    right: -18vw !important;
-    width: clamp(560px, 68%, 980px) !important;
-    min-width: 560px !important;
-    height: 94% !important; 
-    display: flex !important; 
-    align-items: flex-end !important; 
+    top: 10% !important;
+    right: 0 !important;
+    width: clamp(280px, 34vw, 420px) !important;
+    min-width: 280px !important;
+    height: 78% !important; 
     justify-content: flex-end !important; 
     z-index: 5 !important; 
     overflow: visible !important;
@@ -242,7 +240,7 @@ body {
 /* BACKGROUNDS DOS PAPEIS */
 .paper-home { 
     background: url('images/finalrasgado.png?v=3') no-repeat right bottom !important; 
-    background-size: 260% auto !important; 
+    background-size: 120% auto !important; 
     background-position: right center !important;
     width: 100% !important;
     height: 100% !important;
@@ -269,21 +267,21 @@ body {
 }
 .profile-wrapper { 
     position: absolute !important; 
-    left: -16vw !important;
-    bottom: 6% !important;
+    left: 4% !important;
+    bottom: 8% !important;
     z-index: 15 !important; 
     line-height: 0 !important; 
     flex-shrink: 0 !important; 
-    width: clamp(560px, 56%, 780px) !important;
-    max-width: 780px !important;
+    width: clamp(260px, 28%, 320px) !important;
+    max-width: 320px !important;
 }
 .profile-photo { 
-    width: 190% !important; 
+    width: 100% !important; 
     height: auto !important;
     display: block !important; 
     position: relative !important;
     z-index: 15 !important;
-    transform: translateX(-32%) !important;
+    transform: none !important;
 } 
 .bio-pill-floating { 
     position: absolute; 
@@ -338,8 +336,8 @@ body {
     }
     .profile-wrapper {
         position: relative !important;
-        width: 100% !important;
-        margin-bottom: -260px !important;
+        width: 80% !important;
+        margin-bottom: 0 !important;
         align-self: center !important;
         left: auto !important;
         bottom: auto !important;
@@ -352,12 +350,12 @@ body {
     .side-tear-frame {
         position: relative !important;
         height: auto !important;
-        min-height: 560px !important; 
+        min-height: 420px !important; 
         width: 100% !important;
         align-items: flex-end !important; 
     }
     .paper-home {
-        background-size: 160% auto !important;
+        background-size: 85% auto !important;
         background-position: right center !important; 
     }
 }
