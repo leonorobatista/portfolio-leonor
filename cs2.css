@@ -176,7 +176,7 @@ body {
 .project-media video { width: 100%; height: auto; display: block; }
 
 /* =======================================================
-   7. SECÇÃO SOBRE E PAPEIS
+   7. SECÇÃO SOBRE E PAPEIS (Alinhamento Perfeito com a Base)
    ======================================================= */
 .project-description-wrapper { 
     width: 100%; 
@@ -188,19 +188,19 @@ body {
     width: 100%; 
     height: clamp(450px, 80vh, 850px); 
     display: flex; 
-    align-items: center; 
+    align-items: flex-end !important; /* Força o alinhamento no fundo */
     justify-content: center; 
     z-index: 5; 
 }
 
-/* Força a ocultação total de qualquer texto remanescente do HTML antigo */
+/* Força a ocultação total de qualquer texto remanescente */
 .side-tear-frame p {
     display: none !important;
 }
 
 /* BACKGROUNDS DOS PAPEIS */
 .paper-home { 
-    background: url('images/finalrasgado.png') no-repeat right bottom; 
+    background: url('images/finalrasgado.png') no-repeat right bottom !important; /* Colado na direita e no fundo */
     background-size: cover; 
     width: 100%;
 }
@@ -214,7 +214,7 @@ body {
     width: 100%; 
     min-height: 100vh; 
     display: flex; 
-    align-items: center; 
+    align-items: flex-end !important; /* Cola rigorosamente a foto e o papel na base */
     justify-content: space-between; 
     margin-top: clamp(80px, 15vw, 150px); 
     position: relative; 
@@ -226,6 +226,7 @@ body {
     flex-shrink: 0; 
     width: 35%;
     max-width: 500px;
+    margin-bottom: -1px; /* Elimina qualquer folga visual na base */
 }
 .profile-photo { 
     width: 100%; 
@@ -243,7 +244,7 @@ body {
 }
 
 /* =======================================================
-   8. CORREÇÃO GLOBAL PARA MOBILE (Incluindo iPhone SE)
+   8. CORREÇÃO GLOBAL PARA MOBILE (Mantendo exatamente como no vídeo)
    ======================================================= */
 @media (max-width: 768px) {
     /* Sobre/About em Mobile: verticalizado */
@@ -267,6 +268,7 @@ body {
         height: auto;
         min-height: 380px; 
         width: 100%;
+        align-items: center !important; /* No mobile volta ao centro */
     }
     .paper-home {
         background-size: contain !important;
