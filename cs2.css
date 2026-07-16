@@ -221,13 +221,14 @@ body {
 }
 
 .side-tear-frame { 
-    position: absolute !important;
-    top: 10% !important;
-    right: 0 !important;
-    width: clamp(280px, 34vw, 420px) !important;
+    position: relative !important;
+    top: auto !important;
+    right: auto !important;
+    width: 100% !important;
+    max-width: 420px !important;
     min-width: 280px !important;
-    height: 78% !important; 
-    justify-content: flex-end !important; 
+    height: auto !important; 
+    justify-content: center !important; 
     z-index: 5 !important; 
     overflow: visible !important;
 }
@@ -239,7 +240,7 @@ body {
 
 /* BACKGROUNDS DOS PAPEIS */
 .paper-home { 
-    background: url('images/finalrasgado.png?v=3') no-repeat right bottom !important; 
+    background: url('images/finalrasgado.png?v=4') no-repeat right bottom !important; 
     background-size: 120% auto !important; 
     background-position: right center !important;
     width: 100% !important;
@@ -255,9 +256,10 @@ body {
     width: 100%; 
     height: 100vh; 
     min-height: 100vh; 
-    display: flex; 
-    align-items: flex-end !important; 
-    justify-content: space-between; 
+    display: grid; 
+    grid-template-columns: minmax(220px, 320px) minmax(280px, 420px);
+    gap: clamp(30px, 4vw, 70px);
+    align-items: end; 
     margin-top: 0 !important; 
     padding-top: clamp(80px, 15vw, 150px);
     position: relative; 
@@ -266,13 +268,13 @@ body {
     scroll-snap-stop: always;
 }
 .profile-wrapper { 
-    position: absolute !important; 
-    left: 4% !important;
-    bottom: 8% !important;
+    position: relative !important; 
+    left: 0 !important;
+    bottom: auto !important;
     z-index: 15 !important; 
     line-height: 0 !important; 
     flex-shrink: 0 !important; 
-    width: clamp(260px, 28%, 320px) !important;
+    width: 100% !important;
     max-width: 320px !important;
 }
 .profile-photo { 
