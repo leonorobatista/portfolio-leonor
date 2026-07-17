@@ -1,73 +1,38 @@
 <!DOCTYPE html>
-<html lang='pt'>
+<html lang="pt">
 <head>
-    <meta charset='UTF-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <meta http-equiv='Cache-Control' content='no-cache, no-store, must-revalidate'>
-    <meta http-equiv='Pragma' content='no-cache'>
-    <meta http-equiv='Expires' content='0'>
-    <title>Motion Design Portfolio</title>
-        <link class='css-file' rel='stylesheet' href='cs2.css?v=3001'>
-    <link rel="icon" href="data:image/svg+xml;utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Ctext x='0' y='14' font-size='16'%3EL%3C/text%3E%3C/svg%3E">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portefólio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class='grain-overlay'></div>
-
-    <header class='hero'>
-        <div class='horizontal-tear-frame'>
-            <nav class='nav-stickers'>
-                <a href='#projects'><img src='images/projects-pill.png' class='sticker' alt='Projects'></a>
-                <a href='#about'><img src='images/about-pill.png' class='sticker' alt='About'></a>
-            </nav>
-
-            <p class='scroll-tag'>scroll down for more</p>
-        </div>
-
-        <div class='hero-content'>
-            <img src='images/portfolio-title.png' class='title-img' alt='PORTFOLIO'>
-        </div>
+    <!-- Cabeçalho -->
+    <header>
+        <nav>
+            <a href="#" class="btn">Projects</a>
+            <a href="#" class="btn">About me</a>
+        </nav>
+        <h1>PORTFOLIO</h1>
+        <p>scroll down for more</p>
     </header>
 
-    <!-- PROJETOS EM GRELHA 2x2 -->
-    <section id='projects' class='projects-grid-section'>
-
-        <a href='projeto1.html' class='card'>
-            <img src='images/skater.png' alt='Skater Project'>
-            <div class='card-overlay'>
-                <span>SUMOL AD</span>
-            </div>
-        </a>
-
-        <a href='projeto2.html' class='card'>
-            <img src='images/barcode.png' alt='Barcode Project'>
-            <div class='card-overlay'>
-                <span>IDENTIFIED</span>
-            </div>
-        </a>
-
-        <a href='projeto3.html' class='card'>
-            <img src='images/abstract.png' alt='Abstract Project'>
-            <div class='card-overlay'>
-                <span>SOCIAL ANXIETY</span>
-            </div>
-        </a>
-
-        <a href='projeto4.html' class='card'>
-            <img src='images/gatoimagem.png' alt='Gato Project'>
-            <div class='card-overlay'>
-                <span>REEL</span>
-            </div>
-        </a>
-
+    <!-- Grelha de Imagens -->
+    <section class="grid-container">
+        <div class="card"><img src="skater.jpg" alt="Skater"></div>
+        <div class="card"><img src="identified.jpg" alt="Identified"></div>
+        <div class="card"><img src="art.jpg" alt="Art"></div>
+        <div class="card"><div class="placeholder-black"></div></div>
     </section>
 
-    <section id='about' class='about'>
-        <div class='profile-wrapper'>
-            <img src='images/about-pill.png' style='position: absolute; top: 0; left: 0; width: clamp(100px, 15vw, 200px); transform: rotate(-10deg) translateY(-250px) !important; z-index: 25;' alt='About Me'>
+    <!-- Secção About Me -->
+    <section class="about">
+        <h2>About me</h2>
+        <div class="about-content">
+            <img src="perfil.jpg" alt="Foto de perfil">
+            <p>I am a Motion Designer specializing in After Effects. My work focuses on crafting visual narratives...</p>
         </div>
-
-        <div class='side-tear-frame paper-home'></div>
     </section>
 
 </body>

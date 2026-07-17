@@ -1,372 +1,73 @@
-/* =======================================================
-   1. GRÃO E TRANSIÇÃO
-   ======================================================= */
-.grain-overlay {
-    position: fixed;
-    top: -50%; left: -50%; width: 200%; height: 200%;
-    background: url('https://upload.wikimedia.org/wikipedia/commons/7/76/1k_Grain.png');
-    opacity: 0.05; pointer-events: none; z-index: 9999;
-    animation: grain 0.5s steps(10) infinite;
-}
-@keyframes grain {
-    0%, 100% { transform: translate(0, 0); }
-    10% { transform: translate(-5%, -10%); }
-    50% { transform: translate(12%, 9%); }
-    90% { transform: translate(15%, -5%); }
-}
-body { animation: fadeInPage 0.8s ease-in-out; }
-@keyframes fadeInPage { from { opacity: 0; } to { opacity: 1; } }
-
-/* =======================================================
-   2. CONFIGURAÇÃO GLOBAL COM SCROLL SNAP (Correção do container)
-   ======================================================= */
-html { 
-    background: url('images/halftone-bg.png') repeat fixed center / 450px; 
-    scroll-behavior: smooth; 
-    scroll-snap-type: y mandatory; /* Ativa o magnetismo no scroll principal */
-    height: 100vh;
-    overflow-y: scroll; /* Força scroll vertical para o snap funcionar */
-}
-* { 
-    margin: 0; 
-     position: absolute !important; /* dentro da secção about */
-     left: -6% !important;
-     width: calc(100% + 12%) !important;
-     min-width: calc(100% + 12%) !important;
-    overflow-x: hidden; 
-    width: 100%; 
-    position: relative;
-    height: 100vh;
-}
-
-/* =======================================================
-   3. NAVEGAÇÃO STICKERS
-   ======================================================= */
-.nav-stickers { 
-    position: absolute; 
-    top: clamp(15px, 4vw, 40px); 
-    right: clamp(15px, 5vw, 50px); 
-    display: flex; 
-    gap: clamp(8px, 2vw, 20px); 
-    z-index: 100; 
-}
-.sticker { 
-    width: clamp(65px, 10vw, 120px); 
-    transform: rotate(5deg); 
-    transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    cursor: pointer; 
-}
-.sticker:hover { transform: rotate(0deg) scale(1.15); }
-
-/* =======================================================
-   4. HERO SECTION
-   ======================================================= */
-.hero { 
-    height: 100vh; 
-    display: flex; 
-    justify-content: center; 
-    align-items: center; 
-    position: relative; 
-    scroll-snap-align: start; /* Fixa o Hero */
-    scroll-snap-stop: always; /* Obriga a parar no Hero */
-}
-.horizontal-tear-frame { 
-    position: absolute; 
-    inset: 0; 
-    background: url('images/tear-edge-mask.png') no-repeat center / cover; 
-    z-index: 5; 
-}
-.title-img { 
-    width: 85vw; 
-    max-width: 850px; 
-    height: auto;
-    position: relative; 
-    z-index: 10; 
-}
-.scroll-tag { 
-    position: absolute; 
-    bottom: 30px; 
-    left: 50%; 
-    transform: translateX(-50%); 
-    color: white; 
-    text-transform: uppercase; 
-    font-size: clamp(9px, 1.5vw, 11px); 
-    letter-spacing: 3px; 
-    font-weight: bold; 
-    z-index: 20; 
-}
-
-/* =======================================================
- /* =======================================================
-   5. SECÇÃO DE PROJETOS (GRELHA 2x2)
-   ======================================================= */
-
-.projects-grid-section{
-    width:100%;
-    min-height:100vh;
-
-    display:grid;
-    grid-template-columns: repeat(2, minmax(240px, 1fr));
-    gap:32px;
-    grid-auto-rows: auto;
-
-    justify-items:center;
-    align-content:center;
-
-    max-width:1300px;
-    margin:0 auto;
-    padding:120px 6% 60px;
-
-    scroll-snap-align:start;
-    scroll-snap-stop:always;
-}
-
-@media (max-width: 768px) {
-    .projects-grid-section {
-        grid-template-columns: 1fr;
-        padding:80px 5% 40px;
-    }
-}
-
-.card{
-    position:relative;
-    overflow:hidden;
-    transition:transform .4s ease;
-    cursor:pointer;
-    line-height:0;
-    display:block;
-    text-decoration:none;
-
-    width:100%;
-    max-width:520px;
-
-    box-shadow:0 20px 40px rgba(0,0,0,.5);
-    border:10px solid white;
-}
-
-.card img{
-    width:100%;
-    aspect-ratio:16/10;
-    object-fit:cover;
-    display:block;
-}
-
-.card-overlay{
-    position:absolute;
-    inset:0;
-    background:rgba(0,0,0,.75);
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    opacity:0;
-    transition:opacity .3s ease;
-}
-
-.card-overlay span{
-    color:#fff;
-    font-weight:bold;
-    font-size:clamp(1rem,2vw,1.4rem);
-    letter-spacing:2px;
-    text-transform:uppercase;
-    border:2px solid #fff;
-    padding:10px 20px;
-    transform:translateY(20px);
-    transition:transform .3s ease;
-}
-
-.card:hover{ transform:scale(1.02); }
-.card:hover .card-overlay{ opacity:1; }
-.card:hover .card-overlay span{ transform:translateY(0); }
-
-/* =======================================================
-   6. PÁGINAS DE PROJETO
-   ======================================================= */
-.project-container { 
-    padding: clamp(80px, 10vw, 120px) 0 0 0; 
-    display: flex; 
-    flex-direction: column; 
-    align-items: center; 
-    min-height: 100vh; 
-}
-.project-header { 
-    text-align: center; 
-    margin-bottom: clamp(30px, 5vw, 50px); 
-    color: rgb(76, 48, 77); 
-    padding: 0 5%; 
-}
-.project-header h1 { 
-    font-size: clamp(2rem, 6vw, 4rem); 
-    letter-spacing: clamp(2px, 0.5vw, 5px); 
-    text-transform: uppercase; 
-}
-.project-media { 
-    width: 90%; 
-    max-width: 1000px; 
-    background: #000; 
-    line-height: 0; 
-    box-shadow: clamp(10px, 2vw, 20px) clamp(10px, 2vw, 20px) 0px rgba(0,0,0,0.5); 
-    border: clamp(5px, 1vw, 10px) solid white; 
-    margin-bottom: clamp(40px, 8vw, 80px); 
-}
-.project-media video { width: 100%; height: auto; display: block; }
-
-/* =======================================================
-   7. SECÇÃO SOBRE E PAPEIS (Scroll Snap no Fundo)
-   ======================================================= */
-.project-description-wrapper { 
-    width: 100%; 
-    display: flex; 
-    justify-content: center; 
-}
-
-.side-tear-frame {
-    position: absolute !important; /* dentro da secção about */
-    left: -0.5% !important; /* reduced offset */
-    width: calc(100% + 1%) !important; /* much smaller expansion */
-    min-width: calc(100% + 1%) !important;
-    max-width: none !important;
-    margin-left: 0 !important;
-    bottom: 0 !important;
-    height: clamp(140px, 18vh, 260px) !important;
-    display: block !important;
-    z-index: 3 !important; /* below pill z-index: 25 */
-    overflow: hidden !important;
-    pointer-events: none !important;
-    outline: 2px dashed rgba(255,0,0,0.8) !important; /* debug - remove later */
-    background-color: rgba(255,0,0,0.02) !important; /* debug visibility */
-}
-
-/* Ocultação de texto */
-.side-tear-frame p {
-    display: none !important;
-}
-
-/* BACKGROUNDS DOS PAPEIS */
-.paper-home { 
-    background: url('images/finalrasgado.png?v=4') no-repeat right bottom !important; 
-    background-size: auto 70% !important; /* reduce height scale */ 
-    width: 100% !important;
-    min-width: 100% !important;
-}
-.paper-p1 { background: url('images/paper1.png') no-repeat center / cover; }
-.paper-p2 { background: url('images/paper2.png') no-repeat center / cover; }
-.paper-p3 { background: url('images/paper3.png') no-repeat center / cover; }
-.paper-p4 { background: url('images/paper4.png') no-repeat center / cover; }
-
-/* AJUSTES DA PÁGINA SOBRE */
-/* AJUSTES DA PÁGINA SOBRE */
-.about { 
-    width: 100%;
+body {
     margin: 0;
-    padding: clamp(80px, 15vw, 150px) 6% 0; 
-    height: 100vh; 
-    min-height: 100vh; 
-    display: flex; 
-    align-items: flex-end !important; 
-    justify-content: flex-start;
-    gap: clamp(30px, 4vw, 70px);
-    margin-top: 0 !important; 
-    position: relative; 
-    overflow: visible;
-    scroll-snap-align: start;
-    scroll-snap-stop: always;
+    padding: 0;
+    font-family: 'Courier New', monospace; /* Fonte tipo máquina de escrever */
+    background-color: #f7d5e8; /* Cor de fundo rosa suave */
 }
 
-.profile-wrapper { 
-    position: relative !important; 
-    left: 0 !important;
-    bottom: auto !important;
-    z-index: 15 !important; 
-    line-height: 0 !important; 
-    flex-shrink: 0 !important; 
-    width: 250px !important; /* Definido um tamanho fixo para teste */
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    overflow: hidden !important; /* Mudei de visible para hidden para cortar o excesso se necessário */
+/* Header */
+header {
+    text-align: center;
+    padding: 50px 20px;
 }
 
-/* FORÇANDO A IMAGEM A SE ADAPTAR */
-.profile-wrapper img {
-    width: 100% !important;
-    height: auto !important;
-    display: block !important;
-    object-fit: cover !important; /* 'cover' ou 'contain', tente 'cover' se quiser que preencha */
-    max-width: 100% !important;
+nav {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    margin-bottom: 20px;
 }
 
-.bio-pill-floating { 
-    position: absolute; 
-    top: 0 !important;
-    left: 0; 
-    width: clamp(100px, 15vw, 200px); 
-    transform: rotate(-10deg) translateY(-250px) !important;
-    transition: transform 0.3s ease; 
-    z-index: 25; 
+.btn {
+    background: #d4e157;
+    padding: 5px 15px;
+    border-radius: 20px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
 }
-/* ============================acho q tens de mudar no css===========================
-   8. CORREÇÃO GLOBAL PARA MOBILE (Navegação clássica fluída)
-   ======================================================= */
-@media (max-width: 768px) {
-    /* Desativa o scroll snap completamente no mobile */
-    html {
-        scroll-snap-type: none;
-        height: auto;
-        overflow-y: visible;
-    }
-    body {
-        height: auto;
-    }
-    
-    .project-snap-section {
-        height: auto;
-        padding: 20px 10px;
-        scroll-snap-align: none;
-    }
-    .card {
-        max-width: 100%;
-        width: 100%;
-        border: 4px solid white; 
-        box-shadow: 0px 10px 20px rgba(0,0,0,0.3);
-    }
-    .card-overlay {
-        opacity: 1; 
-        background: rgba(0, 0, 0, 0.5);
-    }
 
-    /* Sobre/About em Mobile */
-    .about {
-        height: auto;
-        min-height: 100vh;
-        flex-direction: column;
-        align-items: center !important;
-        justify-content: center;
-        margin-top: 60px !important;
-        padding: 0 !important;
-        scroll-snap-align: none;
-    }
-    .profile-wrapper {
-        position: relative !important;
-        width: 80% !important;
-        margin-bottom: 0 !important;
-        align-self: center !important;
-        left: auto !important;
-        bottom: auto !important;
-    }
-    
-    .side-tear-frame {
-        position: absolute !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: 100% !important;
-        min-width: 100% !important;
-        max-width: none !important;
-        bottom: 0 !important;
-        height: auto !important;
-        min-height: 160px !important; 
-        overflow: hidden !important;
-    }
-    .paper-home {
-        background-size: auto 70% !important;
-        background-position: right bottom !important; 
+/* Grid Responsiva */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    background: #eee; /* Efeito de textura de papel/pontilhado */
+}
+
+.card img, .placeholder-black {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border: 2px solid #333;
+}
+
+.placeholder-black { background: black; }
+
+/* Secção About */
+.about {
+    padding: 40px 20px;
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.about-content img {
+    width: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+/* Responsividade para ecrãs maiores */
+@media (min-width: 768px) {
+    .about-content {
+        flex-direction: row;
+        text-align: left;
+        gap: 30px;
     }
 }
