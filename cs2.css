@@ -222,10 +222,9 @@ body {
 
 .side-tear-frame {
     position: absolute !important; /* dentro da secção about */
-    left: -6vw !important;
-    right: -6vw !important; /* extend beyond container equally */
-    width: auto !important;
-    min-width: calc(100% + 12vw) !important;
+    left: -6% !important;
+    width: calc(100vw + 12%) !important;
+    max-width: none !important;
     margin-left: 0 !important;
     bottom: 0 !important;
     height: clamp(140px, 18vh, 260px) !important;
@@ -243,7 +242,7 @@ body {
 /* BACKGROUNDS DOS PAPEIS */
 .paper-home { 
     background: url('images/finalrasgado.png?v=4') no-repeat right bottom !important; 
-    background-size: cover !important; 
+    background-size: 110% auto !important; 
     width: 100% !important;
     height: 100% !important;
 }
