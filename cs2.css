@@ -222,8 +222,9 @@ body {
 
 .side-tear-frame {
     position: absolute !important; /* dentro da secção about */
-    left: -6% !important;
-    width: calc(100vw + 12%) !important;
+    left: -6vw !important;
+    width: calc(100vw + 12vw) !important;
+    min-width: calc(100vw + 12vw) !important;
     max-width: none !important;
     margin-left: 0 !important;
     bottom: 0 !important;
@@ -242,8 +243,9 @@ body {
 /* BACKGROUNDS DOS PAPEIS */
 .paper-home { 
     background: url('images/finalrasgado.png?v=4') no-repeat right bottom !important; 
-    background-size: 110% auto !important; 
-    width: 100% !important;
+    background-size: 220% auto !important; 
+    width: calc(100vw + 12vw) !important;
+    min-width: calc(100vw + 12vw) !important;
     height: 100% !important;
 }
 .paper-p1 { background: url('images/paper1.png') no-repeat center / cover; }
@@ -341,14 +343,18 @@ body {
     }
     
     .side-tear-frame {
-        position: relative !important;
+        position: absolute !important;
+        left: -6vw !important;
+        width: calc(100vw + 12vw) !important;
+        min-width: calc(100vw + 12vw) !important;
+        max-width: none !important;
+        bottom: 0 !important;
         height: auto !important;
         min-height: 420px !important; 
-        width: 100% !important;
-        align-items: flex-end !important; 
+        overflow: hidden !important;
     }
     .paper-home {
-        background-size: 85% auto !important;
-        background-position: right center !important; 
+        background-size: 240% auto !important;
+        background-position: right bottom !important; 
     }
 }
