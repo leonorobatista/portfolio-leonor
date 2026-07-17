@@ -222,10 +222,11 @@ body {
 
 .side-tear-frame {
     position: absolute !important; /* dentro da secção about */
-    left: 0 !important;
-    right: 0 !important; /* touch left and right edges */
-    width: calc(100% + 12vw) !important; /* extend beyond container */
-    margin-left: -6vw !important; /* push out */
+    left: -6vw !important;
+    right: -6vw !important; /* extend beyond container equally */
+    width: auto !important;
+    min-width: calc(100% + 12vw) !important;
+    margin-left: 0 !important;
     bottom: 0 !important;
     height: clamp(140px, 18vh, 260px) !important;
     display: block !important;
@@ -241,10 +242,8 @@ body {
 
 /* BACKGROUNDS DOS PAPEIS */
 .paper-home { 
-    background: url('images/finalrasgado.png?v=4') no-repeat center bottom !important; 
-    background-size: 100% auto !important; 
-    background-position: center bottom !important;
-    background-repeat: no-repeat !important;
+    background: url('images/finalrasgado.png?v=4') no-repeat right bottom !important; 
+    background-size: cover !important; 
     width: 100% !important;
     height: 100% !important;
 }
