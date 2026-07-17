@@ -29,11 +29,10 @@ html {
 }
 * { 
     margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-}
-body { 
-    font-family: sans-serif; 
+     position: absolute !important; /* dentro da secção about */
+     left: -6% !important;
+     width: calc(100% + 12%) !important;
+     min-width: calc(100% + 12%) !important;
     overflow-x: hidden; 
     width: 100%; 
     position: relative;
@@ -222,9 +221,9 @@ body {
 
 .side-tear-frame {
     position: absolute !important; /* dentro da secção about */
-    left: -6vw !important;
-    width: calc(100vw + 12vw) !important;
-    min-width: calc(100vw + 12vw) !important;
+    left: -0.5% !important; /* reduced offset */
+    width: calc(100% + 1%) !important; /* much smaller expansion */
+    min-width: calc(100% + 1%) !important;
     max-width: none !important;
     margin-left: 0 !important;
     bottom: 0 !important;
@@ -233,6 +232,8 @@ body {
     z-index: 3 !important; /* below pill z-index: 25 */
     overflow: hidden !important;
     pointer-events: none !important;
+    outline: 2px dashed rgba(255,0,0,0.8) !important; /* debug - remove later */
+    background-color: rgba(255,0,0,0.02) !important; /* debug visibility */
 }
 
 /* Ocultação de texto */
@@ -243,10 +244,9 @@ body {
 /* BACKGROUNDS DOS PAPEIS */
 .paper-home { 
     background: url('images/finalrasgado.png?v=4') no-repeat right bottom !important; 
-    background-size: 220% auto !important; 
-    width: calc(100vw + 12vw) !important;
-    min-width: calc(100vw + 12vw) !important;
-    height: 100% !important;
+    background-size: auto 70% !important; /* reduce height scale */ 
+    width: 100% !important;
+    min-width: 100% !important;
 }
 .paper-p1 { background: url('images/paper1.png') no-repeat center / cover; }
 .paper-p2 { background: url('images/paper2.png') no-repeat center / cover; }
@@ -254,22 +254,24 @@ body {
 .paper-p4 { background: url('images/paper4.png') no-repeat center / cover; }
 
 /* AJUSTES DA PÁGINA SOBRE */
+/* AJUSTES DA PÁGINA SOBRE */
 .about { 
     width: 100%;
     margin: 0;
-    padding: clamp(80px, 15vw, 150px) 6% 0; /* top + side padding */
+    padding: clamp(80px, 15vw, 150px) 6% 0; 
     height: 100vh; 
     min-height: 100vh; 
     display: flex; 
     align-items: flex-end !important; 
-    justify-content: flex-start; /* alinhado ao início do conteúdo */
+    justify-content: flex-start;
     gap: clamp(30px, 4vw, 70px);
     margin-top: 0 !important; 
     position: relative; 
     overflow: visible;
-    scroll-snap-align: start; /* Fixa o About no fundo */
+    scroll-snap-align: start;
     scroll-snap-stop: always;
 }
+
 .profile-wrapper { 
     position: relative !important; 
     left: 0 !important;
@@ -277,21 +279,30 @@ body {
     z-index: 15 !important; 
     line-height: 0 !important; 
     flex-shrink: 0 !important; 
-    width: clamp(220px, 24%, 280px) !important;
-    max-width: 280px !important;
+    width: 250px !important; /* Definido um tamanho fixo para teste */
+    max-width: 100% !important;
     margin-left: 0 !important;
-    overflow: visible !important;
+    overflow: hidden !important; /* Mudei de visible para hidden para cortar o excesso se necessário */
 }
+
+/* FORÇANDO A IMAGEM A SE ADAPTAR */
+.profile-wrapper img {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    object-fit: cover !important; /* 'cover' ou 'contain', tente 'cover' se quiser que preencha */
+    max-width: 100% !important;
+}
+
 .bio-pill-floating { 
     position: absolute; 
     top: 0 !important;
     left: 0; 
     width: clamp(100px, 15vw, 200px); 
-    transform: rotate(-10deg) translateY(-250px) !important; /* move way up */
+    transform: rotate(-10deg) translateY(-250px) !important;
     transition: transform 0.3s ease; 
     z-index: 25; 
 }
-
 /* ============================acho q tens de mudar no css===========================
    8. CORREÇÃO GLOBAL PARA MOBILE (Navegação clássica fluída)
    ======================================================= */
@@ -330,7 +341,7 @@ body {
         align-items: center !important;
         justify-content: center;
         margin-top: 60px !important;
-        padding-top: 0;
+        padding: 0 !important;
         scroll-snap-align: none;
     }
     .profile-wrapper {
@@ -344,17 +355,18 @@ body {
     
     .side-tear-frame {
         position: absolute !important;
-        left: -6vw !important;
-        width: calc(100vw + 12vw) !important;
-        min-width: calc(100vw + 12vw) !important;
+        left: 50% !important;
+        transform: translateX(-50%) !important;
+        width: 100% !important;
+        min-width: 100% !important;
         max-width: none !important;
         bottom: 0 !important;
         height: auto !important;
-        min-height: 420px !important; 
+        min-height: 160px !important; 
         overflow: hidden !important;
     }
     .paper-home {
-        background-size: 240% auto !important;
+        background-size: auto 70% !important;
         background-position: right bottom !important; 
     }
 }
