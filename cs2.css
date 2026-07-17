@@ -280,13 +280,14 @@ body {
     width: clamp(220px, 24%, 280px) !important;
     max-width: 280px !important;
     margin-left: 0 !important;
+    overflow: visible !important;
 }
 .bio-pill-floating { 
     position: absolute; 
-    top: -80px; /* bastante mais para baixo */
+    top: 0 !important;
     left: 0; 
     width: clamp(100px, 15vw, 200px); 
-    transform: rotate(-10deg); 
+    transform: rotate(-10deg) translateY(-250px) !important; /* move way up */
     transition: transform 0.3s ease; 
     z-index: 25; 
 }
@@ -339,10 +340,6 @@ body {
         align-self: center !important;
         left: auto !important;
         bottom: auto !important;
-    }
-    .bio-pill-floating {
-        top: -80px; /* matches desktop */
-        left: 5%;
     }
     
     .side-tear-frame {
