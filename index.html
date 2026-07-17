@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Portefólio</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="cs2.css">
 </head>
 <body>
 
-    <!-- Cabeçalho -->
-    <header>
-        <nav>
-            <a href="#" class="btn">Projects</a>
-            <a href="#" class="btn">About me</a>
+    <!-- Hero Section -->
+    <header class="hero">
+        <nav class="nav-pills">
+            <img src="images/projects-pill.png" alt="Projects" class="pill">
+            <img src="images/about-pill.png" alt="About me" class="pill">
         </nav>
-        <h1>PORTFOLIO</h1>
-        <p>scroll down for more</p>
+        <div class="hero-content">
+            <img src="images/portfolio-title.png" alt="Portfolio" class="title-img">
+            <p>scroll down for more</p>
+        </div>
     </header>
 
-    <!-- Grelha de Imagens -->
-    <section class="grid-container">
-        <div class="card"><img src="skater.jpg" alt="Skater"></div>
-        <div class="card"><img src="identified.jpg" alt="Identified"></div>
-        <div class="card"><img src="art.jpg" alt="Art"></div>
-        <div class="card"><div class="placeholder-black"></div></div>
-    </section>
+    <!-- Grid Section -->
+    <main class="grid-container">
+        <div class="grid-item"><img src="images/skater.png" alt="Skater"></div>
+        <div class="grid-item"><img src="images/barcode.png" alt="Identified"></div>
+        <div class="grid-item"><img src="images/abstract.png" alt="Abstract"></div>
+        <div class="grid-item"><img src="images/black-img.png" alt="Placeholder"></div>
+    </main>
 
-    <!-- Secção About Me -->
+    <!-- About Section -->
     <section class="about">
-        <h2>About me</h2>
-        <div class="about-content">
-            <img src="perfil.jpg" alt="Foto de perfil">
-            <p>I am a Motion Designer specializing in After Effects. My work focuses on crafting visual narratives...</p>
+        <img src="images/about-pill.png" alt="About me" class="about-pill">
+        <div class="about-flex">
+            <img src="images/finalrasgado.png" alt="Leonor" class="profile-img">
+            <p class="bio">
+                I am a Motion Designer specializing in After Effects. My work focuses on crafting visual narratives through digital textures and a distinct 'glitch' aesthetic.<br><br>
+                I transform complex emotions into rhythmic, expressive animations, exploring how color and movement can deeply influence the viewer's emotional state.
+            </p>
         </div>
     </section>
 
